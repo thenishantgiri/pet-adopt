@@ -35,7 +35,8 @@ class Details extends Component {
         <div>
           <h1>{name}</h1>
           <h2>
-            {animal} – {breed} – {city}, {state}
+            {animal.charAt(0).toUpperCase() + animal.substring(1)} – {breed} –{" "}
+            {city}, {state}
           </h2>
           <ThemeContext.Consumer>
             {([theme]) => (

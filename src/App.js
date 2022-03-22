@@ -6,7 +6,7 @@ import SearchParams from "./SearchParams";
 import Details from "./Details";
 
 const App = () => {
-  const theme = useState("darkblue");
+  const theme = useState("lightblue");
 
   return (
     <StrictMode>
