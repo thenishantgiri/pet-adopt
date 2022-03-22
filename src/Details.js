@@ -2,6 +2,7 @@ import { Component } from "react";
 import { useParams } from "react-router-dom";
 import ErrorBoundary from "./ErrorBoundary";
 import Carousel from "./Carousel";
+import ThemeContext from "./ThemeContext";
 
 class Details extends Component {
   // constructor(props) {
@@ -36,7 +37,11 @@ class Details extends Component {
           <h2>
             {animal} – {breed} – {city}, {state}
           </h2>
-          <button>Adopt {name}</button>
+          <ThemeContext.Consumer>
+            {([theme]) => (
+              <button style={{ backgroundColor: theme }}>Adopt {name}</button>
+            )}
+          </ThemeContext.Consumer>
           <p>{description}</p>
         </div>
       </div>
