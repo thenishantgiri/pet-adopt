@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { useParams } from "react-router-dom";
+import ErrorBoundary from "./ErrorBoundary";
 import Carousel from "./Carousel";
 
 class Details extends Component {
@@ -47,7 +48,11 @@ class Details extends Component {
 // function component, in order to use Hooks
 const WrappedDetails = () => {
   const params = useParams();
-  return <Details params={params} />;
+  return (
+    <ErrorBoundary>
+      <Details params={params} />
+    </ErrorBoundary>
+  );
 };
 
 export default WrappedDetails;
